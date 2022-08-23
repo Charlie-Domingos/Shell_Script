@@ -21,6 +21,10 @@ echo
 inpt=$(ps -ef | grep $serv)
 arq=$(date +%F)
 creat=$(mkdir /home/$USER/$serv"log"/)
+
+
+### Trecho que faz conexão por ssh de forma automática. (Ainda em estudo)! 
+
 #IPServ="root@192.168.2.194"
 #Senha="emporium"
   

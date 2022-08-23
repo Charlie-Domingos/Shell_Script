@@ -1,0 +1,47 @@
+#!/bin/bash
+
+
+# SCRIPT TEM COMO FINALIDADE MONITORAR A ATIVIDADE DE ALGUM SERVIÇO SELECIONADO PELO USUÁRIO.
+
+## A SAÍDA DA VERIFICAÇÃO SERÁ ARMAZENADA EM UMA PASTA NO /home/"Nome do usuário"/"NomeDoServido"log,
+## O ARQUIVO SERPA NOMEADO COM A DATA A QUAL O SCRIPT FOI EXECUTADO.
+
+#	WRITTEN BY <cdomingues@conecto.com.br> in august 2022
+#	By Charlie Augusto
+
+
+echo
+echo "Nome do Serviço: "
+read serv
+echo
+echo "VERIFICACAO ${serv^^}"  ## ^^ deixa texto em maiusculo
+echo
+
+
+inpt=$(ps -ef | grep $serv)
+arq=$(date +%F)
+creat=$(mkdir /home/$USER/$serv"log"/)
+#IPServ="root@192.168.2.194"
+#Senha="emporium"
+  
+#expect -c "
+#  spawn ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 ${IPServ} 
+#  expect \"password:\"
+#  send \"${Senha}\r\"
+#  interact"
+
+
+for ((loop=1;loop>0;loop++));do
+echo
+echo "-------------------------------------------------------------------------------------------"
+echo
+sleep 4
+echo -e "Verificacao de numero $loop"
+echo 
+echo $inpt
+echo $inpt >> /home/$USER/$serv"log"/${arq}
+done
+
+
+## PROBLEMÁTICA
+## O SCRIPT NÃO ESTÁ EXECUTANDO O PS DENTRO DO SERVIDOR E SIM NO HOST

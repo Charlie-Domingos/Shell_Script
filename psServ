@@ -35,7 +35,7 @@ for ((loop=1;loop>0;loop++));do
 echo
 echo "-------------------------------------------------------------------------------------------"
 echo
-sleep 4
+sleep 1800 
 echo -e "Verificacao de numero $loop"
 echo 
 echo $inpt

@@ -46,6 +46,3 @@ echo $inpt
 echo $inpt >> /home/$USER/$serv"log"/${arq}
 done
 
-
-## PROBLEMÁTICA
-## O SCRIPT NÃO ESTÁ EXECUTANDO O PS DENTRO DO SERVIDOR E SIM NO HOST

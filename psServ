@@ -23,18 +23,6 @@ arq=$(date +%F)
 creat=$(mkdir /home/$USER/$serv"log"/)
 
 
-### Trecho que faz conexão por ssh de forma automática. (Ainda em estudo)! 
-
-#IPServ="root@192.168.2.194"
-#Senha="emporium"
-  
-#expect -c "
-#  spawn ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 ${IPServ} 
-#  expect \"password:\"
-#  send \"${Senha}\r\"
-#  interact"
-
-
 for ((loop=1;loop>0;loop++));do
 echo
 echo "-------------------------------------------------------------------------------------------"

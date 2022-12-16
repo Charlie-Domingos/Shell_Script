@@ -1,0 +1,29 @@
+#!/bin/bash 
+#Ping automatico em um intervalo de IP
+#Desenvolvido por Charlie Augusto By Conecto 14/12/2022
+
+
+echo
+clear;
+echo "   _____________________________________________"
+echo "  |PREENCHER DA SEGUINTE DA FORMA:              |"
+echo "  |EX: 192.162.0.                               |"
+echo "  |FINAL DO IP SERA PREENCHIDO AUTOMATICAMENTE. |"
+echo "  |_____________________________________________|"
+echo
+sleep 2
+echo -n "IP DA LOJA >>> "
+read IPLOJA;
+
+echo "Executano..."
+echo
+for ((IPPDV=101;IPPDV<150;IPPDV++));do ## Linha que realiza a contagem 
+
+if ! ping -c 4 "$IPLOJA$IPPDV" >> /dev/null ; then ##Linha responsalvel por pingar os ips, e jogar a saida para /dev/null
+echo -e "PDV ${IPPDV} \e[1;37;41m OFFLINE \e[0m" 
+else
+echo -e "PDV ${IPPDV} \e[1;37;42m ONLINE \e[0m"
+fi
+done
+break
+

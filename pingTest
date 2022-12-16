@@ -2,6 +2,8 @@
 #Ping automatico em um intervalo de IP
 #Desenvolvido por Charlie Augusto By Conecto 14/12/2022
 
+#Este script tem como finalidade realizar ping automático em um intervalido de ips
+#na faixa de 1 a 50.
 
 echo
 clear;
@@ -17,7 +19,7 @@ read IPLOJA;
 
 echo "Executano..."
 echo
-for ((IPPDV=101;IPPDV<150;IPPDV++));do ## Linha que realiza a contagem 
+for ((IPPDV=101;IPPDV<151;IPPDV++));do ## Linha que realiza a contagem 
 
 if ! ping -c 4 "$IPLOJA$IPPDV" >> /dev/null ; then ##Linha responsalvel por pingar os ips, e jogar a saida para /dev/null
 echo -e "PDV ${IPPDV} \e[1;37;41m OFFLINE \e[0m" 

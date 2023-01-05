@@ -1,0 +1,42 @@
+#!/bin/bash
+
+o "Lógica dos PC's"
+echo 
+sleep 3
+echo "Responda apenas com --ligado-- E --desligado--"
+sleep 2
+echo "O PC1 está ligado ou desligado?"
+read pc1 
+echo 
+sleep 3
+echo "O PC2 está ligado ou desligado?"
+read pc2 
+echo 
+
+## VALIDANDO SE O FOI DIGITADO O INPUT CORRETAMENTE
+if [ "$pc1" != "ligado" -a "$pc1" != "desligado" ];then
+echo "Estado invalido para PC1"
+fi
+
+if [ "$pc2" != "ligado" -a "$pc2" != "desligado" ];then
+echo "Estado invalido para PC2"
+fi
+######################
+
+if [ "$pc1" = "ligado" -a "$pc2" = "ligado" ];then
+echo "15"
+else
+if [ "$pc1" = "desligado" -a "$pc2" = "desligado" ];then
+echo "0" 
+fi
+fi
+
+
+if [ "$pc1" = "ligado" -a "$pc2" = "desligado" ];then
+echo "5" 
+else
+if [ "$pc1" = "desligado" -a "$pc2" = "ligado" ];then
+echo "10"
+fi
+fi
+exit

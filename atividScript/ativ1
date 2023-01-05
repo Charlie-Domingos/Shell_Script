@@ -1,0 +1,30 @@
+#!/bin/bash
+
+med1="José"
+med2="Patricia"
+med3="Carlos"
+
+echo "Bem vindo ao consultório"
+echo
+echo
+echo "Em qual turno gostaria de fazer a consulta?"
+echo "1 - Manhã"
+echo "2 - Tarde"
+echo "3 - Noite"
+read -p "Opcao: " turn
+echo
+echo
+if [ "$turn" = "1" ];then
+  echo "Médico Sr.$med1 é o único a atender no turno da Manhã"
+fi
+if [ "$turn" = "2" ];then
+echo "Médica Sra.$med2 é a única a atender no turno da Tarde"
+fi
+if [ "$turn" = "3" ];then
+echo "Médico Sr.$med3 é o único a atender no turno da Noite"
+fi
+
+sleep 2
+echo "Sua consulta está marcada"
+sleep 4
+echo "Obrigado"

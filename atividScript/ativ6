@@ -1,0 +1,49 @@
+#!/bin/bash
+
+## FORMA QUE FIZ SEM USAR O CASE
+
+echo "Por favor digite o número a ser multiplicado"
+echo
+read numero
+rodada=0
+loop=0
+valmult=0
+while [ "$loop" -lt 3 ];do
+
+rodada=$[ $rodada + 1 ] ;
+valmult=$[ $valmult + 10 ];
+resultmult=$(($numero * $valmult));
+
+loop=$[ $loop + 1 ];
+
+echo "Roda $rodada - $numero multiplicado por $valmult é igua a $resultmult"
+done
+
+##FORMA USANDO O CASE 
+
+#echo "Numero??"
+#read NUM
+
+#VOLTA=$"1"
+
+#while [ $VOLTA -lt 4 ];do
+
+#case $VOLTA in
+
+#1)CONTA=$(($NUM*10))
+#echo "Rodada 1 - $NUM mutiplicado por 10 é igual a $CONTA";;
+
+#2)CONTA=$(($NUM*20))
+#echo "Rodada2 - $NUM mutiplicado por 20 é igual a $CONTA";;
+
+#3)CONTA=$(($NUM*30))
+#echo "Rodada 3 - $NUM mutiplicado por 30 é igual a $CONTA";;
+
+#esac
+
+#VOLTA=$[ $VOLTA + 1 ]
+
+#done
+
+
+

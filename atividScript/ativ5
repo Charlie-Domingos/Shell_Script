@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo
+echo "Seja bem-vindo"
+echo --------------------------------
+echo
+echo "Digite a senha:"
+read passwd
+
+#zerando o loop
+rept=$"0"
+
+while [ $rept -lt 4 ];do
+	if [ "$passwd" = "123" ];then
+	echo "Senha correta, LOGADO AO SISTEMA"
+	exit
+	fi
+	echo "Senha incorreta, tente novamente!"
+	read passwd
+	
+	#acrescentando 1 a cada rodada
+	rept=$[$rept+1]
+
+done
+
+echo "Numero de tentativas esgotado, tente mais tarde!"
+exit

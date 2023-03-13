@@ -1,0 +1,29 @@
+
+#!/bin/bash
+
+echo "" > /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/COMANDO
+echo "" > /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/aviso
+
+for ((loop=2;loop>1;loop++));do
+sleep 1
+echo $loop
+
+
+COMANDO=$(cat /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/COMANDO)
+
+if [ "$COMANDO" = "vivo?" ];then
+echo "sim vivo, esperando o comando, loop $looṕ" >> /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/aviso
+COMANDO=$""
+echo > /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/COMANDO
+fi
+
+
+if [ -n "$COMANDO" ];then
+$COMANDO&
+echo > /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/COMANDO
+
+echo "Executei" $COMANDO "loop $loop" >> /home/$USER/Downloads/CHARLIE/CHARLIE/scripts/aviso
+fi
+
+
+done

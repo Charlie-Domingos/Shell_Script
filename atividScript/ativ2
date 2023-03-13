@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Escolha o nome do carro pelo nome:"
+echo 
+echo "Ferrari, Lamborghini, Celta, Palio, Uno"
+read CARRO
+if [ "$CARRO" = "Ferrari" -o "$CARRO" = "Lamborghini" ];then
+  echo "Este carro pertence a Classe A"
+fi
+if [ "$CARRO" = "Celta" ];then
+echo "Este carro pertence a Classe B"
+fi
+if [ "$CARRO" = "Palio" -o "$CARRO" = "Uno" ];then
+echo "Este carro pertence a Classe C"
+fi
+exit

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+clear
+echo
+echo -n "Digite seu nome: "
+read nome
+sleep 1
+echo
+
+echo "Bem-vindo $nome"
+cadastro() {
+echo
+echo    "	| Nome : $nome"
+echo -n "	| Idade : "
+read idade
+echo -n "	| Cidade : "
+read cidade
+echo -n "	| CPF : "
+read cpf
+echo
+sleep 2
+echo "Cadastro OK"
+echo
+clear
+}
+cadastro;
+
+echo -n "	|Confirme seu CPF : "
+read confircpf
+
+if [ $cpf != $confircpf ] ; then
+clear
+echo
+echo "ERRO na confirmacao"
+sleep 2
+cadastro;
+fi
